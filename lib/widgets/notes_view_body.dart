@@ -13,7 +13,11 @@ class NotesViewBody
       padding: const EdgeInsets.symmetric(horizontal: 18.0),
       child: Column(
         children: [
-          CustumAppbar(),
+          CustumAppbar(
+            text: 'Notes',
+            icon: Icons.search
+            ,
+          ),
          Expanded(child: CustomNotesListview())
         ],
       ),
