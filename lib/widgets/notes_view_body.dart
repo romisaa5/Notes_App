@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:note_app/widgets/custom_note_item.dart';
+import 'package:note_app/widgets/custom_notes_listview.dart';
 import 'package:note_app/widgets/custum_appbar.dart';
 
 class NotesViewBody
@@ -14,9 +14,10 @@ class NotesViewBody
       child: Column(
         children: [
           CustumAppbar(),
-          CustomNoteItem(),
+         Expanded(child: CustomNotesListview())
         ],
       ),
+      
     );
   }
 }

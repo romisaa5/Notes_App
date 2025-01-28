@@ -14,6 +14,7 @@ class Notes_app extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(brightness:Brightness.dark,fontFamily: 'Poppins' ),
       home: NoteView(),
+      
     );
   }
 }
