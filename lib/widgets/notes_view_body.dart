@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:note_app/widgets/custom_note_item.dart';
 import 'package:note_app/widgets/custum_appbar.dart';
 
 class NotesViewBody
@@ -9,10 +10,11 @@ class NotesViewBody
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 24.0),
+      padding: const EdgeInsets.symmetric(horizontal: 18.0),
       child: Column(
         children: [
           CustumAppbar(),
+          CustomNoteItem(),
         ],
       ),
     );
