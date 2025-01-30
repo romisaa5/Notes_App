@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:note_app/constants.dart';
+import 'package:note_app/cubits/notes_cubit/notes_cubit.dart';
 import 'package:note_app/models/note_model.dart';
 import 'package:note_app/views/edit_note_view.dart';
 
@@ -39,7 +41,9 @@ class CustomNoteItem extends StatelessWidget {
               ),
               TextButton(
                 onPressed: () => Navigator.of(context).pop(true),
-                child: Text("Delete", style: TextStyle(color: const Color.fromARGB(255, 224, 75, 64))),
+                child: Text("Delete",
+                    style: TextStyle(
+                        color: const Color.fromARGB(255, 224, 75, 64))),
               ),
             ],
           ),
@@ -48,8 +52,9 @@ class CustomNoteItem extends StatelessWidget {
       onDismissed: (direction) {
         note.delete(); // Delete note from database
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(backgroundColor: KprimaryColor,
-            content: Text("Note deleted successfully")),
+          SnackBar(
+              backgroundColor: KprimaryColor,
+              content: Text("Note deleted successfully")),
         );
       },
       child: GestureDetector(
@@ -83,9 +88,7 @@ class CustomNoteItem extends StatelessWidget {
                 trailing: IconButton(
                     onPressed: () {
                       note.delete();
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        SnackBar(content: Text("Note deleted")),
-                      );
+                      BlocProvider.of<NotesCubit>(context).fetchAllNotes();
                     },
                     icon: Icon(
                       FontAwesomeIcons.trash,
