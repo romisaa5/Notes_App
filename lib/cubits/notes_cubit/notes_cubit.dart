@@ -7,14 +7,10 @@ import 'package:bloc/bloc.dart';
 
 class NotesCubit extends Cubit<NotesState> {
   NotesCubit() : super(NotesInitial());
+  List<NotesModel>? notes;
   fetchAllNotes() async {
-    try {
-      var notesbox = Hive.box<NotesModel>(kNotesbox);
+    var notesbox = Hive.box<NotesModel>(kNotesbox);
+    notes = notesbox.values.toList();
 
-      List<NotesModel> notes = notesbox.values.toList();
-      emit(NotesSuccess(notes));
-    } catch (e) {
-      emit(NotesFailure(e.toString()));
-    }
   }
 }
