@@ -25,7 +25,7 @@ class _NotesViewBodyState extends State<NotesViewBody> {
       child: Column(
         children: [
           CustumAppbar(
-            text: 'Notes',
+            text: 'Taskly',
             icon: Icons.search,
           ),
           Expanded(child: CustomNotesListview())

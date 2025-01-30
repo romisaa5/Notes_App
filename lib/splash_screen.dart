@@ -26,13 +26,13 @@ class _SplashScreenState extends State<SplashScreen> {
         body: Padding(
           padding: const EdgeInsets.only(bottom: 20.0),
           child: Container(
-            color: Colors.black,
+            color: const Color.fromARGB(255, 21, 21, 21),
             child: Column(
               children: [
                 Expanded(
                   child: Center(
                     child: Container(
-                      color: Colors.black,
+                      color:const Color.fromARGB(255, 21, 21, 21),
                       child: Image.asset(
                         "assets/images/splash.png",
                         height: 130,

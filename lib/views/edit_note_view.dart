@@ -11,6 +11,7 @@ class EditNoteView extends StatelessWidget {
       body: CustomEditNote(
         note: note,
       ),
+      
     );
   }
 }
