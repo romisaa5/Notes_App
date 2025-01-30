@@ -16,7 +16,7 @@ final void Function()? ontap;
           borderRadius: BorderRadius.circular(8),
       
         ),
-        child: Center(child: Text('save',style: TextStyle(color: Colors.black,
+        child: Center(child: Text('Add',style: TextStyle(color: Colors.black,
         fontSize: 18
                   )))
       ),
